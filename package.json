@@ -1,0 +1,14 @@
+{
+  "name": "tesoira-estudio",
+  "private": true,
+  "type": "module",
+  "description": "Demo website for a fictional hair salon (static HTML, CSS and JavaScript).",
+  "scripts": {
+    "test": "node --test \"pruebas/*.test.mjs\"",
+    "test:e2e": "playwright test",
+    "serve": "python -m http.server 5511 --bind 127.0.0.1 --directory sitio"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

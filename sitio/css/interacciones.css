@@ -1,0 +1,84 @@
+/* Interacciones de la casa, nivel Premium. Todo respeta prefers-reduced-motion
+   y el contenido se ve aunque JavaScript falle (las clases .js/.listo las pone JS). */
+
+/* Animación de carga: solo existe si js/inicio.js ha puesto .cargando */
+.cortina { display: none; }
+.cargando .cortina {
+  display: grid; place-items: center; position: fixed; inset: 0; z-index: 100; background: var(--fondo-3);
+  animation: cortina-sale .45s var(--curva-cortina) .55s forwards;
+}
+.cortina__nombre {
+  font: 400 clamp(4rem, 14vw, 9rem)/1 var(--neon); color: var(--menta); text-shadow: 0 0 20px var(--menta-honda);
+  clip-path: inset(0 100% 0 0); animation: nombre-entra .5s var(--curva) .05s forwards;
+}
+@keyframes nombre-entra { to { clip-path: inset(0 0 0 0); } }
+@keyframes cortina-sale { to { transform: translateY(-100%); } }
+
+/* Títulos que se revelan por líneas */
+.lineas .linea { display: block; overflow: hidden; padding-block: .08em; margin-block: -.08em; }
+.lineas .linea > span { display: block; }
+.js .lineas .linea > span { transform: translateY(110%); }
+.js.listo .lineas .linea > span { transform: none; transition: transform var(--lento) var(--curva); }
+.js.listo .lineas .linea:nth-child(2) > span { transition-delay: .08s; }
+.js.listo .lineas .linea:nth-child(3) > span { transition-delay: .16s; }
+.js .aparece { opacity: 0; transform: translateY(14px); }
+.js.listo .aparece { opacity: 1; transform: none; transition: opacity .8s .3s, transform .8s .3s var(--curva); }
+
+/* El neón parpadea una vez al encenderse */
+[data-estado="abierto"] .rotulo__nombre { animation: parpadeo 1.8s steps(1) .2s 1 both; }
+.cargando [data-estado="abierto"] .rotulo__nombre { animation-delay: .95s; }
+@keyframes parpadeo { 0%, 14%, 22%, 40% { opacity: 1; } 10%, 18%, 36% { opacity: .25; } 100% { opacity: 1; } }
+
+/* Cinta en movimiento */
+.cinta__pista { animation: cinta 32s linear infinite; }
+.cinta:hover .cinta__pista { animation-play-state: paused; }
+@keyframes cinta { to { transform: translateX(-50%); } }
+
+/* Botones magnéticos y menú tipo Dock */
+.magnetico { transition: transform .25s var(--curva), background-color var(--rapido), color var(--rapido); }
+[data-dock] a { display: inline-block; transform: scale(var(--zoom, 1)); transform-origin: 50% 100%; transition: transform .18s ease-out, color var(--rapido); }
+
+/* Cursor propio, solo con ratón */
+.cursor { position: fixed; left: 0; top: 0; z-index: 90; width: 0; height: 0; pointer-events: none; opacity: 0; transition: opacity var(--rapido); }
+.cursor.visible { opacity: 1; }
+.cursor::before {
+  content: ""; position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%; background: var(--laton);
+  transition: transform .25s var(--curva), border-radius .25s, width .25s, height .25s, left .25s, top .25s, opacity .25s;
+}
+.cursor[data-tipo="enlace"]::before { transform: scale(2.6); opacity: .35; }
+.cursor[data-tipo="ver"]::before { width: 76px; height: 76px; left: -38px; top: -38px; }
+.cursor[data-tipo="reservar"]::before { width: 112px; height: 44px; left: -56px; top: -22px; border-radius: var(--radio); }
+.cursor__texto { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; font: 700 .8125rem/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--sobre-laton); }
+@media (hover: hover) and (pointer: fine) {
+  .con-cursor, .con-cursor a, .con-cursor button { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .cinta__pista { animation: none; }
+}
+
+/* Parte 3: crossfade entre pestañas sin salto de altura (todos los paneles en la misma celda) */
+.js .paneles { display: grid; }
+.js .panel-servicios { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .35s, transform .45s var(--curva), visibility 0s .35s; }
+.js .panel-servicios.activo { opacity: 1; visibility: visible; transform: none; transition: opacity .35s .1s, transform .45s .1s var(--curva); }
+
+/* La línea nueva del ticket «se imprime» */
+.ticket__lineas li.nueva { animation: imprimir .5s var(--curva); }
+@keyframes imprimir { from { clip-path: inset(0 0 100% 0); transform: translateY(-6px); } to { clip-path: inset(0 0 0 0); transform: none; } }
+
+/* Parte 4: el visor aparece con un fundido y la foto cambia con crossfade */
+.visor[open] { animation: visor-entra .35s var(--curva); }
+@keyframes visor-entra { from { opacity: 0; } }
+.visor__img.cambiando { animation: foto-entra .4s var(--curva); }
+@keyframes foto-entra { from { opacity: 0; transform: scale(.98); } }
+
+/* Parte 5: las reseñas se apilan en la misma celda y cambian con crossfade */
+.js .resenas__lista { display: grid; }
+.js .resena { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .6s, transform .7s var(--curva), visibility 0s .6s; }
+.js .resena.activa { opacity: 1; visibility: visible; transform: none; transition: opacity .6s .15s, transform .7s .15s var(--curva); }
+
+/* Parte 9: los títulos de sección se revelan por líneas al entrar en pantalla (no al cargar) */
+.js.listo .lineas.al-ver:not(.visto) .linea > span { transform: translateY(110%); transition: none; }
+.js .al-ver-suave { opacity: 0; transform: translateY(14px); }
+.js .al-ver-suave.visto { opacity: 1; transform: none; transition: opacity .8s .2s, transform .8s .2s var(--curva); }

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tesoira · Peluquería y barbería en Pontevedra (demostración)</title>
+  <meta name="description" content="Demostración de la web de una peluquería y barbería ficticia en Pontevedra. Datos y fotos de prueba.">
+  <meta name="theme-color" content="#12100e">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/yellowtail-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="js/inicio.js"></script>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/secciones.css">
+  <link rel="stylesheet" href="css/reserva.css">
+  <link rel="stylesheet" href="css/interacciones.css">
+  <script type="module" src="js/menu.js"></script>
+  <script type="module" src="js/neon.js"></script>
+  <script type="module" src="js/servicios.js"></script>
+  <script type="module" src="js/galeria.js"></script>
+  <script type="module" src="js/opiniones.js"></script>
+  <script type="module" src="js/nos.js"></script>
+  <script type="module" src="js/ubicacion.js"></script>
+  <script type="module" src="js/reservas.js"></script>
+  <script type="module" src="js/interacciones.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div class="cortina" aria-hidden="true"><span class="cortina__nombre">Tesoira</span></div>
+
+  <!-- Parte 1: cabecera y menú -->
+  <header class="cabecera">
+    <a class="marca" href="#inicio" aria-label="Tesoira, inicio">Tesoira</a>
+    <nav class="menu" aria-label="Principal" data-dock>
+      <a href="#servizos">Servizos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#opinions">Opinións</a>
+      <a href="#nos">Nós</a>
+      <a href="#onde-estamos">Onde estamos</a>
+    </nav>
+    <a class="btn btn-reservar magnetico" href="#reservar">Reservar cita</a>
+    <button class="hamburguesa" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú" data-menu-boton>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="panel" id="menu-movil" aria-label="Menú del móvil">
+    <div class="panel__enlaces">
+      <a href="#servizos">Servizos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#opinions">Opinións</a>
+      <a href="#nos">Nós</a>
+      <a href="#onde-estamos">Onde estamos</a>
+    </div>
+    <div class="panel__pie">
+      <a class="btn btn-reservar" href="#reservar">Reservar cita</a>
+      <p><span data-neon-texto>Martes a sábado</span></p>
+      <p>Rúa do Muíño 14, Pontevedra<br>986 000 000 (teléfono ficticio)</p>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <!-- Parte 2: portada con el neón -->
+    <section class="portada" id="inicio" aria-labelledby="titulo-portada">
+      <div class="portada__foto" data-cursor="ver">
+        <img data-parallax="0.08"
+             src="img/corte-peine-960.webp"
+             srcset="img/corte-peine-480.webp 480w, img/corte-peine-960.webp 960w, img/corte-peine-1600.webp 1600w"
+             sizes="(min-width: 960px) 54vw, 100vw"
+             width="1600" height="1068" fetchpriority="high"
+             alt="Barbero cortando el pelo con peine y tijera (foto provisional)">
+        <div class="rotulo" data-neon aria-hidden="true">
+          <p class="rotulo__nombre">Tesoira</p>
+          <p class="rotulo__cartel" data-neon-cartel>Pechado</p>
+        </div>
+      </div>
+
+      <div class="portada__texto">
+        <p class="etiqueta aparece">Pontevedra · desde 1979</p>
+        <h1 class="portada__titulo lineas" id="titulo-portada">
+          <span class="linea"><span>Unha cadeira,</span></span>
+          <span class="linea"><span>un cliente.</span></span>
+          <span class="linea"><span>Desde 1979.</span></span>
+        </h1>
+        <p class="portada__entrada aparece">Peluquería y barbería en Rúa do Muíño 14, Pontevedra. Cada cita tiene su tiempo y no se solapa con la siguiente.</p>
+        <div class="portada__acciones aparece">
+          <a class="btn btn-reservar magnetico" href="#reservar">Reservar cita</a>
+          <a class="enlace-flecha magnetico" href="#servizos">Ver servicios →</a>
+        </div>
+        <dl class="portada__datos aparece">
+          <div><dt>Ahora</dt><dd data-neon-texto>Martes a sábado</dd></div>
+          <div><dt>Google</dt><dd><a href="#opinions">4,8 · 212 opiniones</a></dd></div>
+          <div><dt>Dónde</dt><dd><a href="#onde-estamos">Rúa do Muíño 14</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cinta" aria-label="Algunos servicios y sus precios">
+      <div class="cinta__pista">
+        <span>Corte mujer 28 €</span><span>Degradado a navaja 18 €</span><span>Afeitado con toalla caliente 15 €</span><span>Mechas balayage 75 €</span><span>Corte + barba 24 €</span><span>Corte infantil 12 €</span>
+        <span aria-hidden="true">Corte mujer 28 €</span><span aria-hidden="true">Degradado a navaja 18 €</span><span aria-hidden="true">Afeitado con toalla caliente 15 €</span><span aria-hidden="true">Mechas balayage 75 €</span><span aria-hidden="true">Corte + barba 24 €</span><span aria-hidden="true">Corte infantil 12 €</span>
+      </div>
+    </section>
+
+    <!-- Parte 3: servicios y ticket de la Carmiña -->
+    <section class="seccion servizos" id="servizos" aria-labelledby="titulo-servizos">
+      <div class="seccion__cabeza">
+        <p class="etiqueta">01 · Carta de precios</p>
+        <h2 class="seccion__titulo lineas al-ver" id="titulo-servizos"><span class="linea"><span>Servizos</span></span></h2>
+        <p class="seccion__entrada al-ver-suave">Toque un servicio para ver el detalle. Lo que añada al ticket pasa a la reserva.</p>
+      </div>
+
+      <div class="servizos__cuerpo">
+        <div class="servizos__carta">
+          <!-- servicios:inicio (generado por herramientas/generar-servicios.mjs) -->
+          <div class="pestanas" role="tablist" aria-label="Categorías de servicios">
+            <button class="pestana" type="button" role="tab" id="pestana-pelo" aria-controls="panel-pelo" aria-selected="true" tabindex="0">Pelo <span class="pestana__num">7</span></button>
+            <button class="pestana" type="button" role="tab" id="pestana-barba" aria-controls="panel-barba" aria-selected="false" tabindex="-1">Barba <span class="pestana__num">3</span></button>
+            <button class="pestana" type="button" role="tab" id="pestana-extras" aria-controls="panel-extras" aria-selected="false" tabindex="-1">Extras <span class="pestana__num">2</span></button>
+          </div>
+          <div class="paneles">
+            <div class="panel-servicios activo" role="tabpanel" id="panel-pelo" aria-labelledby="pestana-pelo" tabindex="0">
+              <ul class="servicios__lista">
+                <li class="servicio" data-id="corte-mujer">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-corte-mujer">
+                      <span class="servicio__nombre">Corte mujer (lavado y secado)</span>
+                      <span class="servicio__tiempo">45 min</span>
+                      <span class="servicio__precio">28 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="corte-mujer" aria-label="Añadir Corte mujer (lavado y secado) al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-corte-mujer">
+                    <p>Corte a tijera con lavado en los lavacabezas verdes y secado.</p>
+                    <p class="servicio__datos">45 min aproximadamente · 28 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="corte-mujer">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="corte-mujer">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="corte-hombre">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-corte-hombre">
+                      <span class="servicio__nombre">Corte hombre</span>
+                      <span class="servicio__tiempo">30 min</span>
+                      <span class="servicio__precio">16 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="corte-hombre" aria-label="Añadir Corte hombre al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-corte-hombre">
+                    <p>Tijera o máquina, con lavado.</p>
+                    <p class="servicio__datos">30 min aproximadamente · 16 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="corte-hombre">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="corte-hombre">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="degradado">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-degradado">
+                      <span class="servicio__nombre">Degradado a navaja</span>
+                      <span class="servicio__tiempo">40 min</span>
+                      <span class="servicio__precio">18 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="degradado" aria-label="Añadir Degradado a navaja al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-degradado">
+                    <p>Degradado bajo, medio o alto acabado a navaja.</p>
+                    <p class="servicio__datos">40 min aproximadamente · 18 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="degradado">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="degradado">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="infantil">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-infantil">
+                      <span class="servicio__nombre">Corte infantil (hasta 10 años)</span>
+                      <span class="servicio__tiempo">20 min</span>
+                      <span class="servicio__precio">12 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="infantil" aria-label="Añadir Corte infantil (hasta 10 años) al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-infantil">
+                    <p>Corte sencillo, con paciencia.</p>
+                    <p class="servicio__datos">20 min aproximadamente · 12 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="infantil">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="infantil">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="color-raiz">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-color-raiz">
+                      <span class="servicio__nombre">Color raíz</span>
+                      <span class="servicio__tiempo">1 h 15 min</span>
+                      <span class="servicio__precio">35 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="color-raiz" aria-label="Añadir Color raíz al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-color-raiz">
+                    <p>Tinte de raíz con lavado y secado.</p>
+                    <p class="servicio__datos">1 h 15 min aproximadamente · 35 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="color-raiz">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="color-raiz">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="balayage">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-balayage">
+                      <span class="servicio__nombre">Mechas balayage</span>
+                      <span class="servicio__tiempo">2 h 30 min</span>
+                      <span class="servicio__precio">75 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="balayage" aria-label="Añadir Mechas balayage al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-balayage">
+                    <p>Mechas pintadas a mano, matiz incluido.</p>
+                    <p class="servicio__datos">2 h 30 min aproximadamente · 75 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="balayage">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="balayage">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="peinado-evento">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-peinado-evento">
+                      <span class="servicio__nombre">Peinado de evento</span>
+                      <span class="servicio__tiempo">45 min</span>
+                      <span class="servicio__precio">30 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="peinado-evento" aria-label="Añadir Peinado de evento al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-peinado-evento">
+                    <p>Recogido u ondas para bodas y fiestas.</p>
+                    <p class="servicio__datos">45 min aproximadamente · 30 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="peinado-evento">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="peinado-evento">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-servicios" role="tabpanel" id="panel-barba" aria-labelledby="pestana-barba" tabindex="0">
+              <ul class="servicios__lista">
+                <li class="servicio" data-id="arreglo-barba">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-arreglo-barba">
+                      <span class="servicio__nombre">Arreglo de barba</span>
+                      <span class="servicio__tiempo">20 min</span>
+                      <span class="servicio__precio">10 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="arreglo-barba" aria-label="Añadir Arreglo de barba al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-arreglo-barba">
+                    <p>Recorte y perfilado con máquina.</p>
+                    <p class="servicio__datos">20 min aproximadamente · 10 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="arreglo-barba">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="arreglo-barba">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="afeitado">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-afeitado">
+                      <span class="servicio__nombre">Afeitado clásico con toalla caliente</span>
+                      <span class="servicio__tiempo">30 min</span>
+                      <span class="servicio__precio">15 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="afeitado" aria-label="Añadir Afeitado clásico con toalla caliente al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-afeitado">
+                    <p>Navaja, toalla caliente y aceite.</p>
+                    <p class="servicio__datos">30 min aproximadamente · 15 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="afeitado">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="afeitado">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="corte-barba">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-corte-barba">
+                      <span class="servicio__nombre">Corte + barba</span>
+                      <span class="servicio__tiempo">50 min</span>
+                      <span class="servicio__precio">24 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="corte-barba" aria-label="Añadir Corte + barba al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-corte-barba">
+                    <p>Corte de hombre y arreglo de barba.</p>
+                    <p class="servicio__datos">50 min aproximadamente · 24 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="corte-barba">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="corte-barba">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-servicios" role="tabpanel" id="panel-extras" aria-labelledby="pestana-extras" tabindex="0">
+              <ul class="servicios__lista">
+                <li class="servicio" data-id="cejas">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-cejas">
+                      <span class="servicio__nombre">Cejas</span>
+                      <span class="servicio__tiempo">10 min</span>
+                      <span class="servicio__precio">6 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="cejas" aria-label="Añadir Cejas al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-cejas">
+                    <p>Perfilado con cera o hilo.</p>
+                    <p class="servicio__datos">10 min aproximadamente · 6 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="cejas">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="cejas">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="servicio" data-id="hidratante">
+                  <div class="servicio__fila">
+                    <button class="servicio__cabeza" type="button" aria-expanded="false" aria-controls="detalle-hidratante">
+                      <span class="servicio__nombre">Tratamiento hidratante</span>
+                      <span class="servicio__tiempo">20 min</span>
+                      <span class="servicio__precio">12 €</span>
+                    </button>
+                    <button class="servicio__mas" type="button" aria-pressed="false" data-ticket="hidratante" aria-label="Añadir Tratamiento hidratante al ticket"><span aria-hidden="true">+</span></button>
+                  </div>
+                  <div class="servicio__detalle" id="detalle-hidratante">
+                    <p>Mascarilla con masaje en el lavacabezas.</p>
+                    <p class="servicio__datos">20 min aproximadamente · 12 €</p>
+                    <div class="servicio__acciones">
+                      <button class="btn btn-ticket" type="button" aria-pressed="false" data-ticket="hidratante">Añadir al ticket</button>
+                      <a class="enlace-flecha" href="#reservar" data-reservar="hidratante">Reservar solo este →</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- servicios:fin -->
+        </div>
+
+        <aside class="ticket" id="ticket" aria-labelledby="ticket-titulo">
+          <div class="ticket__papel">
+            <h3 class="ticket__marca" id="ticket-titulo">Tesoira</h3>
+            <p class="ticket__antes">Antes Peluquería Carmiña · 1979<br>Rúa do Muíño 14 · Pontevedra</p>
+            <p class="ticket__fecha" data-ticket-fecha></p>
+            <ul class="ticket__lineas" data-ticket-lineas></ul>
+            <p class="ticket__vacio" data-ticket-vacio>Pulse «+» en los servicios que quiera. Aquí se suman el precio y el tiempo.</p>
+            <dl class="ticket__totales">
+              <div><dt>Tiempo aprox.</dt><dd data-ticket-tiempo>0 min</dd></div>
+              <div class="ticket__total"><dt>Total</dt><dd data-ticket-total>0 €</dd></div>
+            </dl>
+            <p class="ticket__gracias" aria-hidden="true">Graciñas</p>
+          </div>
+          <p class="solo-lector" aria-live="polite" data-ticket-anuncio></p>
+          <a class="btn btn-reservar ticket__reservar magnetico" href="#reservar" data-ticket-reservar aria-disabled="true">Reservar con este ticket</a>
+        </aside>
+      </div>
+    </section>
+    <!-- Parte 4: galería -->
+    <section class="seccion galeria" id="galeria" aria-labelledby="titulo-galeria">
+      <div class="seccion__cabeza galeria__cabeza">
+        <div>
+          <p class="etiqueta">02 · Fotos</p>
+          <h2 class="seccion__titulo lineas al-ver" id="titulo-galeria"><span class="linea"><span>Galería</span></span></h2>
+        </div>
+        <p class="seccion__entrada al-ver-suave">Fotos de libre uso mientras llegan las del local. Toque una para verla en grande.</p>
+        <div class="galeria__flechas">
+          <button class="flecha" type="button" data-galeria-mover="-1" aria-label="Fotos anteriores"><span aria-hidden="true">←</span></button>
+          <button class="flecha" type="button" data-galeria-mover="1" aria-label="Fotos siguientes"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div class="galeria__marco">
+        <ul class="galeria__pista" data-galeria-pista>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="0" data-grande="img/peluquera-1600.webp" data-cursor="ver" aria-label="Ampliar: Peinado">
+                <img src="img/peluquera-960.webp" srcset="img/peluquera-480.webp 480w, img/peluquera-960.webp 960w, img/peluquera-1600.webp 1600w" sizes="(min-width: 960px) 40vw, 80vw" width="1600" height="1067" loading="lazy" alt="Peluquera trabajando el pelo de una clienta (foto provisional)">
+              </button>
+              <figcaption><span>Peinado</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="1" data-grande="img/afeitado-navaja-1600.webp" data-cursor="ver" aria-label="Ampliar: Afeitado a navaja">
+                <img src="img/afeitado-navaja-960.webp" srcset="img/afeitado-navaja-480.webp 480w, img/afeitado-navaja-960.webp 960w, img/afeitado-navaja-1600.webp 1600w" sizes="(min-width: 960px) 40vw, 80vw" width="1600" height="1068" loading="lazy" alt="Barbero afeitando una barba con navaja (foto provisional)">
+              </button>
+              <figcaption><span>Afeitado a navaja</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="2" data-grande="img/barberia-verde-960.webp" data-cursor="ver" aria-label="Ampliar: Sillones y paredes verdes">
+                <img src="img/barberia-verde-960.webp" srcset="img/barberia-verde-480.webp 480w, img/barberia-verde-960.webp 960w" sizes="(min-width: 960px) 40vw, 80vw" width="960" height="640" loading="lazy" alt="Interior de una barbería antigua con sillones y paredes verde menta (foto provisional)">
+              </button>
+              <figcaption><span>Sillones y paredes verdes</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="3" data-grande="img/barberia-1935-1600.webp" data-cursor="ver" aria-label="Ampliar: Una barbería en 1935">
+                <img src="img/barberia-1935-960.webp" srcset="img/barberia-1935-480.webp 480w, img/barberia-1935-960.webp 960w, img/barberia-1935-1600.webp 1600w" sizes="(min-width: 960px) 40vw, 80vw" width="1600" height="1272" loading="lazy" alt="Interior de una barbería antigua en blanco y negro con el barbero trabajando (foto provisional)">
+              </button>
+              <figcaption><span>Una barbería en 1935</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="4" data-grande="img/sillon-1900-1600.webp" data-cursor="ver" aria-label="Ampliar: Sillón hidráulico antiguo">
+                <img src="img/sillon-1900-960.webp" srcset="img/sillon-1900-480.webp 480w, img/sillon-1900-960.webp 960w, img/sillon-1900-1600.webp 1600w" sizes="(min-width: 960px) 40vw, 80vw" width="1600" height="1430" loading="lazy" alt="Sillón de barbero antiguo de hierro y cuero (foto provisional)">
+              </button>
+              <figcaption><span>Sillón hidráulico antiguo</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+          <li class="galeria__item">
+            <figure>
+              <button class="galeria__boton" type="button" data-indice="5" data-grande="img/corte-peine-1600.webp" data-cursor="ver" aria-label="Ampliar: Corte con peine y tijera">
+                <img src="img/corte-peine-960.webp" srcset="img/corte-peine-480.webp 480w, img/corte-peine-960.webp 960w, img/corte-peine-1600.webp 1600w" sizes="(min-width: 960px) 40vw, 80vw" width="1600" height="1068" loading="lazy" alt="Barbero cortando el pelo con peine (foto provisional)">
+              </button>
+              <figcaption><span>Corte con peine y tijera</span> <span class="provisional" data-estado="provisional">Foto provisional</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Parte 5: opiniones -->
+    <section class="seccion opinions" id="opinions" aria-labelledby="titulo-opinions">
+      <div class="seccion__cabeza">
+        <p class="etiqueta">03 · Opiniones en Google</p>
+        <h2 class="seccion__titulo lineas al-ver" id="titulo-opinions"><span class="linea"><span>Opinións</span></span></h2>
+      </div>
+
+      <div class="opinions__cuerpo">
+        <div class="nota">
+          <p class="nota__numero"><span data-contador="4.8">4,8</span></p>
+          <p class="nota__estrellas" role="img" aria-label="4,8 de 5 estrellas"><span aria-hidden="true">★★★★★</span></p>
+          <p class="nota__total">212 opiniones en Google</p>
+          <p class="nota__enlace">Enlace a las reseñas de Google <span class="provisional" data-estado="provisional">Falta el enlace</span></p>
+        </div>
+
+        <div class="resenas" data-resenas>
+          <ul class="resenas__lista" aria-live="off" data-resenas-lista>
+            <!-- resenas:inicio (generado por herramientas/generar-resenas.mjs) -->
+            <li class="resena activa" data-resena="0">
+              <blockquote>
+                <p class="resena__texto">«Iria me hizo la consulta de color antes de tocar nada y me explicó por qué no me convenía el rubio que llevaba en la foto. Salí con un balayage que me encanta.»</p>
+              </blockquote>
+              <p class="resena__pie"><span class="resena__autor">Marta R.</span> <span class="resena__estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span> <span class="resena__fecha">septiembre de 2026</span></p>
+            </li>
+            <li class="resena" data-resena="1">
+              <blockquote>
+                <p class="resena__texto">«El mejor degradado de Pontevedra. Brais no tiene prisa y se nota.»</p>
+              </blockquote>
+              <p class="resena__pie"><span class="resena__autor">Xoán P.</span> <span class="resena__estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span> <span class="resena__fecha">agosto de 2026</span></p>
+            </li>
+            <li class="resena" data-resena="2">
+              <blockquote>
+                <p class="resena__texto">«Mi abuela venía a la Carmiña y ahora vengo yo. Los lavacabezas verdes siguen ahí y son comodísimos.»</p>
+              </blockquote>
+              <p class="resena__pie"><span class="resena__autor">Lucía F.</span> <span class="resena__estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span> <span class="resena__fecha">junio de 2026</span></p>
+            </li>
+            <li class="resena" data-resena="3">
+              <blockquote>
+                <p class="resena__texto">«Afeitado con toalla caliente un sábado con vinilos sonando. Repetiré.»</p>
+              </blockquote>
+              <p class="resena__pie"><span class="resena__autor">Andrés M.</span> <span class="resena__estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span> <span class="resena__fecha">octubre de 2026</span></p>
+            </li>
+            <!-- resenas:fin -->
+          </ul>
+          <div class="resenas__controles">
+            <button class="flecha" type="button" data-resena-mover="-1" aria-label="Opinión anterior"><span aria-hidden="true">←</span></button>
+            <p class="resenas__contador" data-resena-contador>1 / 4</p>
+            <button class="flecha" type="button" data-resena-mover="1" aria-label="Opinión siguiente"><span aria-hidden="true">→</span></button>
+            <button class="resenas__pausa" type="button" aria-pressed="false" data-resena-pausa>Pausar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parte 6: nosotros -->
+    <section class="seccion nos" id="nos" aria-labelledby="titulo-nos">
+      <div class="nos__foto">
+        <img src="img/barberia-1935-960.webp" srcset="img/barberia-1935-480.webp 480w, img/barberia-1935-960.webp 960w, img/barberia-1935-1600.webp 1600w"
+             sizes="(min-width: 960px) 42vw, 100vw" width="1600" height="1272" loading="lazy"
+             alt="Interior de una barbería antigua en blanco y negro (foto provisional, no es el local)">
+        <p class="nos__sello" aria-hidden="true">1979</p>
+        <p class="nos__credito"><span class="provisional" data-estado="provisional">Foto provisional: no es el local</span></p>
+      </div>
+
+      <div class="nos__texto">
+        <div class="seccion__cabeza">
+          <p class="etiqueta">04 · Desde 1979</p>
+          <h2 class="seccion__titulo lineas al-ver" id="titulo-nos"><span class="linea"><span>Nós</span></span></h2>
+        </div>
+
+        <ol class="linea-tiempo">
+          <li><span class="linea-tiempo__anio">1979</span><p>Carmiña Souto abre la peluquería en el bajo de su casa, en Rúa do Muíño 14. Peina a medio barrio durante cuarenta años.</p></li>
+          <li><span class="linea-tiempo__anio">2019</span><p>Su nieta Iria la reforma, añade la barbería y la llama Tesoira. Se queda con los lavacabezas verdes y el espejo grande.</p></li>
+        </ol>
+
+        <div class="nos__casa">
+          <h3 class="nos__subtitulo">Como traballamos</h3>
+          <p>Cada cita tiene su tiempo y no se solapa con otra en la misma silla. Antes de cualquier tinte, la consulta de color es gratis.</p>
+          <ul class="nos__rasgos">
+            <li>Lavacabezas verde menta de 1979, restaurados</li>
+            <li>Suelo de terrazo original</li>
+            <li>Espejo grande con marco de latón</li>
+            <li>Rótulo de neón en el escaparate</li>
+            <li>Vinilos en el tocadiscos los sábados</li>
+          </ul>
+        </div>
+
+        <div class="equipo">
+          <h3 class="nos__subtitulo">O equipo</h3>
+          <ul class="equipo__lista">
+            <li class="persona" data-persona="iria">
+              <button class="persona__cabeza" type="button" aria-expanded="false" aria-controls="persona-iria">
+                <span class="persona__foto" aria-hidden="true">IS</span>
+                <span class="persona__texto">
+                  <span class="persona__nombre">Iria Souto</span>
+                  <span class="persona__puesto">Dueña. Color y mechas</span>
+                </span>
+                <span class="persona__signo" aria-hidden="true">+</span>
+              </button>
+              <div class="persona__detalle" id="persona-iria">
+                <p>Nieta de la Carmiña. Reformó el local en 2019 y lleva el color: antes de cualquier tinte hace la consulta de color, que es gratis.</p>
+                <p><span class="provisional" data-estado="provisional">Falta la foto</span></p>
+                <a class="enlace-flecha" href="#reservar" data-reservar-con="Iria Souto">Reservar con Iria →</a>
+              </div>
+            </li>
+            <li class="persona" data-persona="brais">
+              <button class="persona__cabeza" type="button" aria-expanded="false" aria-controls="persona-brais">
+                <span class="persona__foto" aria-hidden="true">BN</span>
+                <span class="persona__texto">
+                  <span class="persona__nombre">Brais Novo</span>
+                  <span class="persona__puesto">Barbero. Degradados y afeitado a navaja</span>
+                </span>
+                <span class="persona__signo" aria-hidden="true">+</span>
+              </button>
+              <div class="persona__detalle" id="persona-brais">
+                <p>Degradados acabados a navaja y afeitado clásico con toalla caliente.</p>
+                <p><span class="provisional" data-estado="provisional">Falta la foto</span></p>
+                <a class="enlace-flecha" href="#reservar" data-reservar-con="Brais Novo">Reservar con Brais →</a>
+              </div>
+            </li>
+            <li class="persona" data-persona="antia">
+              <button class="persona__cabeza" type="button" aria-expanded="false" aria-controls="persona-antia">
+                <span class="persona__foto" aria-hidden="true">AL</span>
+                <span class="persona__texto">
+                  <span class="persona__nombre">Antía Lema</span>
+                  <span class="persona__puesto">Cortes de mujer y peinados de evento</span>
+                </span>
+                <span class="persona__signo" aria-hidden="true">+</span>
+              </button>
+              <div class="persona__detalle" id="persona-antia">
+                <p>Cortes a tijera y recogidos u ondas para bodas y fiestas.</p>
+                <p><span class="provisional" data-estado="provisional">Falta la foto</span></p>
+                <a class="enlace-flecha" href="#reservar" data-reservar-con="Antía Lema">Reservar con Antía →</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parte 7: ubicación y contacto -->
+    <section class="seccion onde" id="onde-estamos" aria-labelledby="titulo-onde">
+      <div class="seccion__cabeza">
+        <p class="etiqueta">05 · Pontevedra</p>
+        <h2 class="seccion__titulo lineas al-ver" id="titulo-onde"><span class="linea"><span>Onde estamos</span></span></h2>
+      </div>
+
+      <div class="onde__cuerpo">
+        <div class="mapa" data-mapa>
+          <div class="mapa__tapa" data-mapa-tapa>
+            <span class="mapa__pin" aria-hidden="true"></span>
+            <p class="mapa__aviso">El mapa es de Google. Al pulsar, Google recibe su dirección IP y puede usar cookies.</p>
+            <button class="btn btn-reservar" type="button" data-mapa-boton>Ver mapa</button>
+          </div>
+        </div>
+
+        <div class="onde__datos">
+          <div class="onde__bloque">
+            <h3 class="onde__subtitulo">Dirección</h3>
+            <p class="onde__direccion">Rúa do Muíño 14, bajo<br>36002 Pontevedra</p>
+            <p><span class="provisional" data-estado="provisional">Dirección ficticia de demostración</span></p>
+            <a class="enlace-flecha" href="https://www.google.com/maps/search/?api=1&amp;query=Praza%20da%20Ferrer%C3%ADa%2C%20Pontevedra" target="_blank" rel="noopener noreferrer">Cómo llegar →</a>
+          </div>
+
+          <div class="onde__bloque">
+            <h3 class="onde__subtitulo">Horario</h3>
+            <p class="onde__ahora" data-neon><span class="onde__led" aria-hidden="true"></span><span data-neon-texto>Martes a sábado</span></p>
+            <table class="horario">
+              <caption class="solo-lector">Horario semanal</caption>
+              <tbody>
+              <tr data-dia="1"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+              <tr data-dia="2"><th scope="row">Martes</th><td>9:30-14:00 · 16:00-20:00</td></tr>
+              <tr data-dia="3"><th scope="row">Miércoles</th><td>9:30-14:00 · 16:00-20:00</td></tr>
+              <tr data-dia="4"><th scope="row">Jueves</th><td>9:30-14:00 · 16:00-21:00</td></tr>
+              <tr data-dia="5"><th scope="row">Viernes</th><td>9:30-20:00</td></tr>
+              <tr data-dia="6"><th scope="row">Sábado</th><td>9:00-14:00</td></tr>
+              <tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr>
+              </tbody>
+            </table>
+            <p class="onde__nota">Cerrado los festivos nacionales y la segunda quincena de agosto.</p>
+          </div>
+
+          <div class="onde__bloque">
+            <h3 class="onde__subtitulo">Contacto</h3>
+            <ul class="contacto">
+              <li><span class="contacto__tipo">Teléfono</span> 986 000 000 <span class="provisional" data-estado="provisional">Ficticio</span></li>
+              <li><span class="contacto__tipo">WhatsApp</span> Solo para reservas <span class="provisional" data-estado="provisional">Demostración: no se envía</span></li>
+              <li><span class="contacto__tipo">Email</span> <a href="mailto:hola@tesoira.example">hola@tesoira.example</a></li>
+              <li><span class="contacto__tipo">Instagram</span> @tesoira.estudio <span class="provisional" data-estado="provisional">Cuenta inventada</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parte 8: reserva. Sin JavaScript solo se ve este aviso; con JavaScript los botones abren el diálogo. -->
+    <section class="sin-js-reserva" id="reservar" aria-labelledby="titulo-sin-js">
+      <h2 id="titulo-sin-js">Reservar cita</h2>
+      <p>Para pedir cita desde la web hace falta activar JavaScript en el navegador.</p>
+    </section>
+
+    <dialog class="reserva" aria-labelledby="reserva-titulo" data-reserva>
+      <div class="reserva__caja">
+        <header class="reserva__cabeza">
+          <p class="reserva__marca" aria-hidden="true">Tesoira</p>
+          <h2 class="reserva__titulo" id="reserva-titulo">Pedir cita</h2>
+          <button class="reserva__cerrar" type="button" data-reserva-cerrar aria-label="Cerrar la reserva"><span aria-hidden="true">×</span></button>
+          <ol class="reserva__pasos" aria-label="Pasos de la reserva" data-reserva-pasos>
+            <li>Servizos</li><li>Profesional</li><li>Día</li><li>Hora</li><li>Datos</li><li>Resumo</li>
+          </ol>
+          <div class="reserva__barra" aria-hidden="true"><span data-reserva-barra></span></div>
+        </header>
+
+        <form class="reserva__cuerpo" id="reserva-form" data-reserva-form novalidate>
+          <section class="paso" data-paso="1" aria-labelledby="paso1-titulo">
+            <h3 class="paso__titulo" id="paso1-titulo" tabindex="-1">¿Qué servicios quiere?</h3>
+            <p class="paso__ayuda">Puede elegir varios. Se suman el precio y el tiempo.</p>
+            <div class="paso__servicios" data-paso-servicios></div>
+          </section>
+
+          <section class="paso" data-paso="2" aria-labelledby="paso2-titulo" hidden>
+            <h3 class="paso__titulo" id="paso2-titulo" tabindex="-1">¿Con quién?</h3>
+            <fieldset class="opciones" data-paso-profesional>
+              <legend class="solo-lector">Profesional</legend>
+            </fieldset>
+          </section>
+
+          <section class="paso" data-paso="3" aria-labelledby="paso3-titulo" hidden>
+            <h3 class="paso__titulo" id="paso3-titulo" tabindex="-1">¿Qué día?</h3>
+            <p class="paso__ayuda">Próximas cuatro semanas. Los días sin hueco para <span data-texto-duracion></span> aparecen tachados.</p>
+            <div class="calendario" data-paso-calendario></div>
+          </section>
+
+          <section class="paso" data-paso="4" aria-labelledby="paso4-titulo" hidden>
+            <h3 class="paso__titulo" id="paso4-titulo" tabindex="-1">¿A qué hora?</h3>
+            <p class="paso__ayuda" data-texto-dia></p>
+            <div class="horas" data-paso-horas></div>
+          </section>
+
+          <section class="paso" data-paso="5" aria-labelledby="paso5-titulo" hidden>
+            <h3 class="paso__titulo" id="paso5-titulo" tabindex="-1">Sus datos</h3>
+            <div class="campo">
+              <label for="r-nombre">Nombre</label>
+              <input id="r-nombre" name="nombre" type="text" autocomplete="name" maxlength="60" required aria-describedby="r-nombre-error">
+              <p class="campo__error" id="r-nombre-error" data-error="nombre"></p>
+            </div>
+            <div class="campo">
+              <label for="r-telefono">Teléfono</label>
+              <input id="r-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-describedby="r-telefono-ayuda r-telefono-error">
+              <p class="campo__ayuda" id="r-telefono-ayuda">Para confirmarle la cita. Por ejemplo: 612 345 678.</p>
+              <p class="campo__error" id="r-telefono-error" data-error="telefono"></p>
+            </div>
+            <div class="campo">
+              <label for="r-comentario">Comentario <span class="campo__opcional">(opcional)</span></label>
+              <textarea id="r-comentario" name="comentario" rows="3" maxlength="300"></textarea>
+            </div>
+            <div class="campo campo--casilla">
+              <input id="r-privacidad" name="privacidad" type="checkbox" required aria-describedby="r-privacidad-error">
+              <label for="r-privacidad">He leído la <a href="privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</label>
+              <p class="campo__error" id="r-privacidad-error" data-error="privacidad"></p>
+            </div>
+          </section>
+
+          <section class="paso" data-paso="6" aria-labelledby="paso6-titulo" hidden>
+            <h3 class="paso__titulo" id="paso6-titulo" tabindex="-1">Revise su solicitud</h3>
+            <dl class="resumen" data-paso-resumen></dl>
+            <p class="reserva__aviso">Es una <strong>solicitud de cita</strong>, no una cita confirmada. El negocio le responderá en su horario.</p>
+            <div class="reserva__demo" data-reserva-demo hidden>
+              <p class="reserva__demo-titulo">Reserva de demostración: todavía no se envía.</p>
+              <p>Este es el mensaje que llegaría al negocio por WhatsApp:</p>
+              <pre class="reserva__mensaje" data-reserva-mensaje></pre>
+            </div>
+          </section>
+        </form>
+
+        <footer class="reserva__pie">
+          <div class="reserva__total" aria-live="polite" data-reserva-total></div>
+          <div class="reserva__botones">
+            <button class="enlace-flecha reserva__atras" type="button" data-reserva-atras>← Atrás</button>
+            <button class="btn btn-reservar" type="submit" form="reserva-form" data-reserva-seguir>Continuar</button>
+            <a class="btn btn-reservar" href="https://wa.me/" data-reserva-whatsapp target="_blank" rel="noopener noreferrer" hidden>Enviar solicitud por WhatsApp</a>
+          </div>
+        </footer>
+      </div>
+    </dialog>
+
+    <dialog class="visor" aria-label="Foto ampliada" data-visor>
+      <figure class="visor__figura">
+        <img class="visor__img" src="img/peluquera-960.webp" alt="" loading="lazy" width="1600" height="1068" data-visor-img>
+        <figcaption class="visor__pie"><span data-visor-texto></span> · <span data-visor-contador></span></figcaption>
+      </figure>
+      <button class="visor__cerrar" type="button" data-visor-cerrar aria-label="Cerrar la foto"><span aria-hidden="true">×</span></button>
+      <button class="visor__ant flecha" type="button" data-visor-mover="-1" aria-label="Foto anterior"><span aria-hidden="true">←</span></button>
+      <button class="visor__sig flecha" type="button" data-visor-mover="1" aria-label="Foto siguiente"><span aria-hidden="true">→</span></button>
+    </dialog>
+  </main>
+  <a class="ticket-flotante" href="#ticket" data-ticket-flotante hidden>Ticket · <span data-ticket-flotante-texto></span></a>
+
+  <!-- Parte 7: pie -->
+  <footer class="pie">
+    <div class="pie__arriba">
+      <div class="pie__col">
+        <p class="pie__titulo">Tesoira Estudio de Pelo</p>
+        <p>Rúa do Muíño 14, bajo · 36002 Pontevedra</p>
+        <p><span data-neon-texto>Martes a sábado</span></p>
+      </div>
+      <nav class="pie__col" aria-label="Secciones">
+        <a href="#servizos">Servizos</a><a href="#galeria">Galería</a><a href="#opinions">Opinións</a><a href="#nos">Nós</a><a href="#onde-estamos">Onde estamos</a>
+      </nav>
+      <nav class="pie__col" aria-label="Textos legales">
+        <a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="aviso-legal.html">Aviso legal</a>
+      </nav>
+      <div class="pie__col">
+        <a class="btn btn-reservar magnetico" href="#reservar">Reservar cita</a>
+      </div>
+    </div>
+    <p class="pie__nombre" aria-hidden="true">Tesoira</p>
+    <p class="pie__creditos">Fotos provisionales de Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Barber_cutting_hair_with_comb._Back_view_of_man_in_barber_shop.jpg" target="_blank" rel="noopener noreferrer">«Barber cutting hair with comb. Back view of man in barber shop»</a>, de Nenad Stojkovic (CC BY 2.0); <a href="https://commons.wikimedia.org/w/index.php?curid=116286199" target="_blank" rel="noopener noreferrer">«Attractive hairdresser is shaving male beard with the knife»</a>, de Nenad Stojkovic (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:Hairstylist_at_Paris_Fashion_Week_2019.jpg" target="_blank" rel="noopener noreferrer">«Hairstylist at Paris Fashion Week 2019»</a>, de Rohit Verma (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Barber_shop_(4682858271).jpg" target="_blank" rel="noopener noreferrer">«Barber shop (4682858271)»</a>, de jimmyweee (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:Barber_shop_interior,_New_Orleans,_1935.jpg" target="_blank" rel="noopener noreferrer">«Barber shop interior, New Orleans, 1935»</a>, de Ben Shahn (dominio público); <a href="https://commons.wikimedia.org/wiki/File:Terrazzo-normal.jpg" target="_blank" rel="noopener noreferrer">«Terrazzo-normal»</a>, de Roll-Stone (dominio público); <a href="https://commons.wikimedia.org/wiki/File:Kochs%27_Gold_Medal_Hydraulic_Barbers%27_Chair_No._23.jpg" target="_blank" rel="noopener noreferrer">«Kochs' Gold Medal Hydraulic Barbers' Chair No. 23»</a> (dominio público). Tipografías Archivo y Yellowtail (licencias libres SIL OFL y Apache 2.0).</p>
+    <p class="pie__creditos">Demostración de una web para un negocio ficticio. © 2026</p>
+  </footer>
+
+  <p class="franja-demo" role="note">Demostración: negocio ficticio.<span class="franja-demo__mas"> Datos y fotos de prueba.</span></p>
+</body>
+</html>

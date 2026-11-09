@@ -1,0 +1,51 @@
+/* Estilo B «Neón de noche» + cinta de C (etapa 3). Todo el CSS usa estas variables. */
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-latin-standard-normal.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+}
+@font-face {
+  font-family: "Yellowtail";
+  src: url("../fonts/yellowtail-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-display: swap;
+}
+
+:root {
+  /* Colores */
+  --fondo: #12100e;          /* negro cálido */
+  --fondo-2: #1c1915;        /* superficies */
+  --fondo-3: #0b0a09;        /* más hondo: cortina, menú */
+  --tinta: #f3ece0;
+  --tinta-suave: #b9b0a2;    /* AA sobre --fondo */
+  --linea: rgb(243 236 224 / .14);
+  --menta: #9ff2d6;          /* el neón y los lavacabezas */
+  --menta-brillo: #3fd9a7;
+  --menta-honda: #1f9f78;
+  --laton: #d2a756;          /* marco del espejo: botones */
+  --laton-claro: #e6bf72;
+  --ambar: #ffb54d;          /* cartel «Aberto» */
+  --sobre-laton: #12100e;
+
+  /* Tipografía */
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --neon: "Yellowtail", "Brush Script MT", cursive;
+  --paso-pequeno: clamp(.8125rem, .79rem + .1vw, .875rem);
+  --paso-texto: clamp(1.0625rem, 1rem + .25vw, 1.1875rem);
+  --paso-entrada: clamp(1.25rem, 1.1rem + .7vw, 1.625rem);
+  --paso-titulo: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
+  --paso-gigante: clamp(2.75rem, 1.4rem + 4.2vw, 5.25rem);
+
+  /* Espacios */
+  --margen: clamp(20px, 5vw, 72px);
+  --hueco-seccion: clamp(88px, 12vw, 168px);
+  --radio: 2px;
+  --alto-cabecera: 76px;
+  --alto-franja: 34px;
+
+  /* Movimiento */
+  --curva: cubic-bezier(.2, .7, .1, 1);
+  --curva-cortina: cubic-bezier(.7, 0, .2, 1);
+  --rapido: .2s;
+  --medio: .5s;
+  --lento: .9s;
+}

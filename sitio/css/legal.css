@@ -1,0 +1,23 @@
+/* ===== Parte 10: páginas legales (mismo estilo que la web, sin animaciones) ===== */
+.legal__cabecera {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 18px var(--margen); border-bottom: 1px solid var(--linea);
+}
+.legal__marca { font: 400 2rem/1 var(--neon); color: var(--menta); text-decoration: none; text-shadow: 0 0 14px rgb(63 217 167 / .45); }
+.legal { max-width: 760px; margin: 0 auto; padding: 56px var(--margen) 88px; }
+.legal__aviso {
+  margin-bottom: 40px; padding: 16px 18px; border: 1.5px dashed var(--ambar); border-radius: var(--radio); color: var(--ambar);
+}
+.legal h1 { font: 800 var(--paso-titulo)/1 var(--sans); font-stretch: 92%; text-transform: uppercase; letter-spacing: -.01em; }
+.legal__fecha { margin-top: 12px; color: var(--tinta-suave); }
+.legal h2 { margin: 44px 0 14px; font: 700 var(--paso-entrada)/1.25 var(--sans); }
+.legal p, .legal li { color: #ddd5c7; max-width: 68ch; }
+.legal p + p { margin-top: 12px; }
+.legal ul { margin: 12px 0 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.legal a { color: var(--menta); }
+.legal__nota { padding-left: 14px; border-left: 2px solid var(--menta); }
+.legal code { font-size: .9em; color: var(--tinta); }
+.legal__pie { padding: 32px var(--margen) calc(32px + var(--alto-franja)); border-top: 1px solid var(--linea); color: var(--tinta-suave); display: grid; gap: 14px; }
+.legal__pie nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.legal__pie a { text-decoration: none; padding: 4px 0; }
+.legal__pie a[aria-current="page"] { color: var(--menta); }
