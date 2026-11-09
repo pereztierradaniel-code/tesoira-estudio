@@ -1,6 +1,6 @@
 # Tesoira Estudio de Pelo
 
-[English](#en) | [Español](#es) | [Live demo](https://taupe-bombolone-662721.netlify.app)
+[English](#en) | [Español](#es) | [Live demo](https://tesoira-web.netlify.app)
 
 ![Tesoira on desktop](docs/desktop.png)
 
