@@ -1,0 +1,4 @@
+# Netlify publica solo la carpeta de la web
+[build]
+  publish = "sitio"
+  command = ""
